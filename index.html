@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dayone Mortgages | Your Guide to Insurance & Mortgages</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* Custom styles for the Inter font */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Style for scroll-triggered animations */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
+
+    <!-- Header -->
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center space-x-2">
+                <svg width="32" height="32" viewBox="0 0 24 24" class="text-blue-600" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                <span class="text-2xl font-bold text-gray-900">Dayone Mortgages</span>
+            </a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#services" class="text-gray-600 hover:text-blue-600 transition duration-300">Services</a>
+                <a href="#about" class="text-gray-600 hover:text-blue-600 transition duration-300">About Us</a>
+                <a href="#team" class="text-gray-600 hover:text-blue-600 transition duration-300">Our Team</a>
+                <a href="#calculator" class="text-gray-600 hover:text-blue-600 transition duration-300">Calculator</a>
+                <a href="#testimonials" class="text-gray-600 hover:text-blue-600 transition duration-300">Testimonials</a>
+                <a href="#contact" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition duration-300">Contact Us</a>
+            </nav>
+            <button class="md:hidden" id="mobile-menu-button">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+         <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-2">
+            <a href="#services" class="block text-gray-600 hover:text-blue-600 transition duration-300">Services</a>
+            <a href="#about" class="block text-gray-600 hover:text-blue-600 transition duration-300">About Us</a>
+            <a href="#team" class="block text-gray-600 hover:text-blue-600 transition duration-300">Our Team</a>
+            <a href="#calculator" class="block text-gray-600 hover:text-blue-600 transition duration-300">Calculator</a>
+            <a href="#testimonials" class="block text-gray-600 hover:text-blue-600 transition duration-300">Testimonials</a>
+            <a href="#contact" class="block bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition duration-300">Contact Us</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="bg-white">
+            <div class="container mx-auto px-6 py-24 md:py-32 text-center">
+                <h1 class="text-4xl md:text-6xl font-bold text-gray-900 leading-tight mb-4">Secure Your Future, Today.</h1>
+                <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-8">Expert advice on insurance and mortgages in New Zealand. We provide clear, straightforward guidance to help you make confident financial decisions.</p>
+                <a href="#contact" class="bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-700 transition duration-300 transform hover:scale-105">Get a Free Consultation</a>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-20 fade-in-section">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Our Services</h2>
+                    <p class="text-lg text-gray-600 mt-2">Tailored solutions for your financial needs.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Service Card 1: Insurance -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                        <div class="flex items-center justify-center h-16 w-16 bg-blue-100 text-blue-600 rounded-full mb-6">
+                            <i data-lucide="shield" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-3">Insurance Planning</h3>
+                        <p class="text-gray-600">From life and health to income protection, we find the right cover to protect you and your loved ones from life's uncertainties.</p>
+                    </div>
+                    <!-- Service Card 2: Mortgages -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                        <div class="flex items-center justify-center h-16 w-16 bg-blue-100 text-blue-600 rounded-full mb-6">
+                            <i data-lucide="home" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-3">Mortgage Brokering</h3>
+                        <p class="text-gray-600">Whether you're a first-home buyer or a seasoned investor, we navigate the market to secure competitive rates and the right loan structure for you.</p>
+                    </div>
+                    <!-- Service Card 3: Financial Advice -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                         <div class="flex items-center justify-center h-16 w-16 bg-blue-100 text-blue-600 rounded-full mb-6">
+                            <i data-lucide="bar-chart-3" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-3">Financial Strategy</h3>
+                        <p class="text-gray-600">We help you build a long-term financial plan, focusing on wealth creation and retirement planning to ensure your future is secure.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about" class="bg-white py-20 fade-in-section">
+            <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img src="https://placehold.co/600x400/E2E8F0/4A5568?text=Our+Office" alt="Financial consulting office" class="rounded-lg shadow-xl">
+                </div>
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Your Trusted Partners in Finance</h2>
+                    <p class="text-gray-600 mb-4 text-lg">Dayone Mortgages is a New Zealand-based consultancy dedicated to providing honest and transparent financial advice. Our mission is to demystify the complexities of insurance and mortgages, empowering our clients to achieve their financial goals with confidence.</p>
+                    <p class="text-gray-600 text-lg">We believe in building long-lasting relationships based on trust and a deep understanding of your unique circumstances.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Team Section -->
+        <section id="team" class="py-20 fade-in-section">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Meet Our Team</h2>
+                    <p class="text-lg text-gray-600 mt-2">Experienced professionals dedicated to your success.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <!-- Team Member 1 -->
+                    <div class="bg-white text-center p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                        <img src="https://placehold.co/200x200/E2E8F0/4A5568?text=Photo" alt="Team Member 1" class="w-32 h-32 rounded-full mx-auto mb-4">
+                        <h3 class="text-2xl font-semibold text-gray-900">Ben</h3>
+                        <p class="text-blue-600 font-medium mb-2">Lead Mortgage Advisor</p>
+                        <p class="text-gray-600">With over 15 years of experience in the banking and finance industry, Ben is an expert at structuring complex loans and finding the perfect solution for his clients.</p>
+                    </div>
+                    <!-- Team Member 2 -->
+                    <div class="bg-white text-center p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                        <img src="https://placehold.co/200x200/E2E8F0/4A5568?text=Photo" alt="Team Member 2" class="w-32 h-32 rounded-full mx-auto mb-4">
+                        <h3 class="text-2xl font-semibold text-gray-900">John Smith</h3>
+                        <p class="text-blue-600 font-medium mb-2">Senior Insurance Specialist</p>
+                        <p class="text-gray-600">John is passionate about ensuring his clients have the right protection in place. He specializes in personal and business risk insurance, providing peace of mind.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mortgage Calculator Section -->
+        <section id="calculator" class="bg-white py-20 fade-in-section">
+            <div class="container mx-auto px-6">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="text-center lg:text-left">
+                        <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Mortgage Calculator</h2>
+                        <p class="text-lg text-gray-600 mt-2">Get an estimate of your mortgage repayments. This tool is for guidance purposes only.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-2xl">
+                        <div class="space-y-6">
+                            <div>
+                                <label for="loanAmount" class="block text-sm font-medium text-gray-700">Loan Amount ($)</label>
+                                <input type="number" id="loanAmount" class="mt-1 block w-full px-4 py-3 bg-gray-100 border-gray-200 rounded-md text-lg focus:ring-blue-500 focus:border-blue-500" placeholder="e.g., 500000" value="500000">
+                            </div>
+                            <div>
+                                <label for="interestRate" class="block text-sm font-medium text-gray-700">Interest Rate (%)</label>
+                                <input type="number" id="interestRate" class="mt-1 block w-full px-4 py-3 bg-gray-100 border-gray-200 rounded-md text-lg focus:ring-blue-500 focus:border-blue-500" placeholder="e.g., 6.5" step="0.01" value="6.5">
+                            </div>
+                            <div>
+                                <label for="loanTerm" class="block text-sm font-medium text-gray-700">Loan Term (years)</label>
+                                <input type="number" id="loanTerm" class="mt-1 block w-full px-4 py-3 bg-gray-100 border-gray-200 rounded-md text-lg focus:ring-blue-500 focus:border-blue-500" placeholder="e.g., 30" value="30">
+                            </div>
+                            <div>
+                                <label for="repaymentFrequency" class="block text-sm font-medium text-gray-700">Repayment Frequency</label>
+                                <select id="repaymentFrequency" class="mt-1 block w-full px-4 py-3 bg-gray-100 border-gray-200 rounded-md text-lg focus:ring-blue-500 focus:border-blue-500">
+                                    <option value="monthly">Monthly</option>
+                                    <option value="fortnightly">Fortnightly</option>
+                                    <option value="weekly">Weekly</option>
+                                </select>
+                            </div>
+                            <button id="calculateBtn" class="w-full bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-700 transition duration-300">Calculate</button>
+                        </div>
+                        <div id="calculatorResult" class="mt-8 text-center bg-blue-50 p-6 rounded-lg" style="display: none;">
+                            <p id="paymentFrequencyText" class="text-lg text-gray-600">Estimated Monthly Payment:</p>
+                            <p id="repaymentAmount" class="text-4xl font-bold text-blue-800"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="py-20 fade-in-section">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">What Our Clients Say</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <div class="bg-white p-8 rounded-xl shadow-lg">
+                        <p class="text-gray-600 mb-4">"The team at Clarity Financial made the mortgage process so simple and stress-free. Their advice was invaluable, and we secured a fantastic rate for our first home."</p>
+                        <p class="font-semibold text-gray-900">- Sarah & Tom, Auckland</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-lg">
+                        <p class="text-gray-600 mb-4">"I finally have an insurance plan that I understand and feel confident in. The guidance was clear, professional, and perfectly tailored to my family's needs."</p>
+                        <p class="font-semibold text-gray-900">- James P., Wellington</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="bg-blue-700 text-white py-20 fade-in-section">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Take the Next Step?</h2>
+                <p class="text-lg text-blue-200 max-w-2xl mx-auto mb-8">Let's discuss your financial future. Book a no-obligation consultation with one of our expert advisors today.</p>
+                <a href="mailto:contact@clarityfinancial.co.nz?subject=Free Consultation Request" class="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition duration-300 transform hover:scale-105">Email Us to Get Started</a>
+                <p class="text-sm text-blue-300 mt-4">Note: For a live website, this button would link to a contact form. For now, it opens your email client.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 Clarity Financial NZ. All Rights Reserved.</p>
+            <p class="text-sm text-gray-400 mt-2">A disclosure statement is available on request and free of charge.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Lucide Icons initialization
+        lucide.createIcons();
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Scroll-triggered fade-in animations
+        const sections = document.querySelectorAll('.fade-in-section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+        // Mortgage Calculator Logic
+        const calculateBtn = document.getElementById('calculateBtn');
+        calculateBtn.addEventListener('click', () => {
+            const loanAmount = parseFloat(document.getElementById('loanAmount').value);
+            const interestRate = parseFloat(document.getElementById('interestRate').value);
+            const loanTerm = parseInt(document.getElementById('loanTerm').value);
+            const frequency = document.getElementById('repaymentFrequency').value;
+            
+            const resultDiv = document.getElementById('calculatorResult');
+            const repaymentAmountEl = document.getElementById('repaymentAmount');
+            const paymentFrequencyTextEl = document.getElementById('paymentFrequencyText');
+
+            if (loanAmount > 0 && interestRate > 0 && loanTerm > 0) {
+                let periodsPerYear;
+                let frequencyText;
+
+                switch (frequency) {
+                    case 'weekly':
+                        periodsPerYear = 52;
+                        frequencyText = 'Weekly';
+                        break;
+                    case 'fortnightly':
+                        periodsPerYear = 26;
+                        frequencyText = 'Fortnightly';
+                        break;
+                    case 'monthly':
+                    default:
+                        periodsPerYear = 12;
+                        frequencyText = 'Monthly';
+                        break;
+                }
+
+                const periodicInterestRate = interestRate / 100 / periodsPerYear;
+                const numberOfPayments = loanTerm * periodsPerYear;
+
+                const numerator = periodicInterestRate * Math.pow(1 + periodicInterestRate, numberOfPayments);
+                const denominator = Math.pow(1 + periodicInterestRate, numberOfPayments) - 1;
+                const periodicPayment = loanAmount * (numerator / denominator);
+
+                if (isFinite(periodicPayment)) {
+                    paymentFrequencyTextEl.textContent = `Estimated ${frequencyText} Payment:`;
+                    repaymentAmountEl.textContent = `$${periodicPayment.toLocaleString('en-NZ', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+                    resultDiv.style.display = 'block';
+                } else {
+                    repaymentAmountEl.textContent = 'Invalid values';
+                    resultDiv.style.display = 'block';
+                }
+            } else {
+                repaymentAmountEl.textContent = 'Please fill all fields';
+                resultDiv.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
