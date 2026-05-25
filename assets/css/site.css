@@ -781,10 +781,22 @@ textarea {
 }
 
 .calculator-section {
-    padding-top: 58px;
+    padding-top: 32px;
+}
+
+.calculator-page .page-hero {
+    padding: 42px 0 34px;
 }
 
 .calculator-widget {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(300px, 360px);
+    grid-template-areas:
+        "controls side"
+        "status status"
+        "details details"
+        "reduction reduction";
+    align-items: start;
     overflow: visible;
     border: 1px solid var(--line);
     border-radius: 8px;
@@ -793,10 +805,11 @@ textarea {
 }
 
 .calculator-controls {
+    grid-area: controls;
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 26px 34px;
-    padding: 30px;
+    gap: 20px 28px;
+    padding: 24px 20px 20px 24px;
 }
 
 .calc-control {
@@ -816,10 +829,10 @@ textarea {
     display: flex;
     align-items: center;
     gap: 7px;
-    min-height: 32px;
-    margin: 0 0 10px;
+    min-height: 26px;
+    margin: 0 0 8px;
     color: #5c5c5c;
-    font-size: 1.05rem;
+    font-size: 0.95rem;
     font-weight: 900;
 }
 
@@ -892,7 +905,7 @@ textarea {
 .calc-input-group {
     display: flex;
     align-items: center;
-    min-height: 58px;
+    min-height: 48px;
     overflow: hidden;
     border: 1px solid #e1e8ee;
     border-radius: 8px;
@@ -902,16 +915,16 @@ textarea {
 .calc-input-group span {
     display: grid;
     height: 100%;
-    min-width: 48px;
+    min-width: 42px;
     place-items: center;
     color: #5c5c5c;
     border-right: 1px solid #e1e8ee;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 800;
 }
 
 .calc-input-group span:last-child {
-    min-width: 74px;
+    min-width: 64px;
     border-right: 0;
     border-left: 1px solid #e1e8ee;
 }
@@ -919,12 +932,12 @@ textarea {
 .calc-input-group input {
     flex: 1 1 auto;
     min-width: 0;
-    height: 58px;
+    height: 48px;
     border: 0;
     border-radius: 0;
     background: transparent;
     color: #5c5c5c;
-    font-size: 1.15rem;
+    font-size: 1.04rem;
     font-weight: 900;
     text-align: right;
 }
@@ -935,7 +948,7 @@ textarea {
 
 .range-input {
     width: 100%;
-    margin: 24px 0 8px;
+    margin: 16px 0 4px;
     padding: 0;
     border: 0;
     accent-color: var(--logo-blue);
@@ -950,9 +963,9 @@ textarea {
 }
 
 .range-input::-webkit-slider-thumb {
-    width: 30px;
-    height: 30px;
-    margin-top: -13px;
+    width: 24px;
+    height: 24px;
+    margin-top: -10px;
     border: 2px solid var(--logo-blue);
     border-radius: 999px;
     background: white;
@@ -973,8 +986,8 @@ textarea {
 }
 
 .range-input::-moz-range-thumb {
-    width: 28px;
-    height: 28px;
+    width: 22px;
+    height: 22px;
     border: 2px solid var(--logo-blue);
     border-radius: 999px;
     background: white;
@@ -985,6 +998,7 @@ textarea {
     display: flex;
     justify-content: space-between;
     color: #5c5c5c;
+    font-size: 0.9rem;
     font-weight: 800;
 }
 
@@ -998,7 +1012,7 @@ textarea {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     overflow: hidden;
-    min-height: 58px;
+    min-height: 48px;
     border: 1px solid var(--line);
     border-radius: 8px;
     background: white;
@@ -1021,13 +1035,13 @@ textarea {
 
 .segmented-control label {
     display: grid;
-    min-height: 58px;
+    min-height: 48px;
     place-items: center;
     margin: 0;
-    padding: 10px 12px;
+    padding: 8px 10px;
     border-right: 1px solid var(--line);
     color: #5c5c5c;
-    font-size: 1.02rem;
+    font-size: 0.92rem;
     font-weight: 800;
     line-height: 1.15;
     text-align: center;
@@ -1049,28 +1063,29 @@ textarea {
 }
 
 .repayment-type-label {
-    margin-top: 26px;
+    margin-top: 18px;
 }
 
 .calculator-reduction {
+    grid-area: reduction;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 34px;
-    padding: 28px;
+    gap: 24px;
+    padding: 18px 24px;
     background: var(--logo-blue);
     color: white;
 }
 
 .calculator-reduction p {
     margin: 0;
-    font-size: clamp(1.3rem, 3vw, 2rem);
+    font-size: clamp(1.2rem, 2.2vw, 1.65rem);
     font-weight: 900;
     line-height: 1.2;
 }
 
 .calculator-reduction .button {
-    min-width: 240px;
+    min-width: 220px;
     border: 3px solid white;
     background: white;
     color: var(--logo-blue);
@@ -1079,20 +1094,32 @@ textarea {
 }
 
 .calculator-output {
-    padding: 28px 30px 34px;
-    background: white;
+    display: contents;
+}
+
+.calculator-widget > .form-status {
+    grid-area: status;
+    margin: 0 24px;
 }
 
 .calc-output-grid {
-    display: grid;
-    grid-template-columns: minmax(0, 1.25fr) minmax(320px, 0.85fr);
-    gap: 30px;
-    align-items: start;
+    display: contents;
 }
 
 .calc-main,
 .calc-side {
     min-width: 0;
+}
+
+.calc-main {
+    grid-area: details;
+    padding: 22px 30px 28px;
+    border-top: 1px solid var(--line);
+}
+
+.calc-side {
+    grid-area: side;
+    padding: 24px 24px 0 0;
 }
 
 .calc-tabs {
@@ -1105,7 +1132,7 @@ textarea {
 }
 
 .calc-tab {
-    min-height: 62px;
+    min-height: 52px;
     border: 0;
     border-right: 1px solid var(--line);
     background: white;
@@ -1166,7 +1193,7 @@ textarea {
 }
 
 .calc-result-card {
-    padding: 28px;
+    padding: 22px;
     border: 1px solid var(--logo-blue);
     border-radius: 8px;
     background: white;
@@ -1182,26 +1209,26 @@ textarea {
 .calc-result-card strong {
     display: block;
     color: var(--logo-blue);
-    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-size: clamp(2.35rem, 4.6vw, 3.2rem);
     line-height: 1;
 }
 
 .calc-result-card span {
     display: block;
-    font-size: 1.2rem;
+    font-size: 1.05rem;
 }
 
 .calc-rate {
     display: flex;
     align-items: end;
     gap: 6px;
-    margin-top: 18px;
+    margin-top: 14px;
     color: var(--logo-blue);
     font-weight: 900;
 }
 
 .calc-rate output {
-    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-size: clamp(1.9rem, 4vw, 2.6rem);
     line-height: 1;
 }
 
@@ -1213,7 +1240,7 @@ textarea {
 .calc-result-card hr {
     border: 0;
     border-top: 1px solid var(--line);
-    margin: 24px 0;
+    margin: 18px 0;
 }
 
 .calc-result-card .sub-result {
@@ -1242,8 +1269,8 @@ textarea {
 
 .repayment-chart {
     grid-column: 1 / -1;
-    overflow-x: auto;
-    padding: 18px;
+    overflow: hidden;
+    padding: 14px;
     border: 1px solid var(--line);
     border-radius: 8px;
     background: white;
@@ -1252,7 +1279,6 @@ textarea {
 .repayment-area-chart {
     display: block;
     width: 100%;
-    min-width: 700px;
     height: auto;
 }
 
@@ -1340,7 +1366,7 @@ textarea {
 .table-wrap {
     grid-column: 1 / -1;
     overflow-x: auto;
-    max-height: 620px;
+    max-height: 430px;
     overflow-y: auto;
     border: 1px solid var(--line);
     border-radius: 8px;
@@ -1348,20 +1374,25 @@ textarea {
 }
 
 .amortisation-table {
-    width: 100%;
-    min-width: 620px;
+    width: max-content;
+    min-width: 100%;
     border-collapse: collapse;
+    table-layout: auto;
 }
 
 .amortisation-table th,
 .amortisation-table td {
-    padding: 13px 14px;
+    padding: 8px 12px;
     border-bottom: 1px solid #d7e4e8;
+    font-size: 0.94rem;
+    line-height: 1.25;
     text-align: right;
+    white-space: nowrap;
 }
 
 .amortisation-table th:first-child,
 .amortisation-table td:first-child {
+    width: 1%;
     text-align: left;
 }
 
@@ -1598,8 +1629,36 @@ textarea {
         grid-template-columns: 1fr;
     }
 
-    .calc-output-grid {
+    .calculator-widget {
+        display: grid;
         grid-template-columns: 1fr;
+        grid-template-areas:
+            "controls"
+            "status"
+            "side"
+            "details"
+            "reduction";
+    }
+
+    .calculator-widget > .form-status {
+        margin: 0 16px;
+    }
+
+    .calculator-output {
+        display: contents;
+    }
+
+    .calc-output-grid {
+        display: contents;
+    }
+
+    .calc-main {
+        padding: 18px 16px 22px;
+        border-top: 1px solid var(--line);
+    }
+
+    .calc-side {
+        padding: 0 16px 18px;
     }
 
     .visual-panel,
@@ -1668,10 +1727,6 @@ textarea {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 18px 14px;
         padding: 16px;
-    }
-
-    .calculator-output {
-        padding: 18px 16px 22px;
     }
 
     .calc-label-row,
@@ -1830,27 +1885,31 @@ textarea {
     }
 
     .calc-result-card {
-        padding: 18px;
+        padding: 14px;
     }
 
     .calc-result-card strong {
-        font-size: clamp(2rem, 10vw, 2.8rem);
+        font-size: clamp(1.9rem, 8vw, 2.5rem);
     }
 
     .calc-result-card span {
-        font-size: 1rem;
+        font-size: 0.95rem;
     }
 
     .calc-rate {
-        margin-top: 12px;
+        margin-top: 8px;
     }
 
     .calc-rate output {
-        font-size: clamp(1.8rem, 8vw, 2.4rem);
+        font-size: clamp(1.55rem, 7vw, 2.1rem);
     }
 
     .calc-result-card hr {
-        margin: 18px 0;
+        margin: 10px 0;
+    }
+
+    .calc-result-card .sub-result {
+        font-size: clamp(1.3rem, 6vw, 1.75rem);
     }
 
     .calc-contact-card {
@@ -1892,8 +1951,8 @@ textarea {
     }
 
     .calculator-controls {
-        grid-template-columns: 1fr;
-        gap: 16px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px 12px;
         padding: 14px;
     }
 
@@ -1932,24 +1991,12 @@ textarea {
         font-size: 0.98rem;
     }
 
-    .calculator-output {
-        padding: 16px 14px 20px;
-    }
-
-    .calc-output-grid {
-        gap: 18px;
-    }
-
     .calc-tab {
         min-height: 46px;
         font-size: 0.72rem;
     }
 
-    .repayment-area-chart {
-        min-width: 560px;
-    }
-
     .amortisation-table {
-        min-width: 560px;
+        min-width: 100%;
     }
 }
