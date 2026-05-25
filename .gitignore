@@ -1,0 +1,13 @@
+.DS_Store
+.env
+.env.*
+*.key
+*.pem
+*.p12
+*.pfx
+__pycache__/
+.mypy_cache/
+.pytest_cache/
+.coverage
+*.py[cod]
+data
