@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mortgage Calculator | Day One Mortgages &amp; Insurance</title>
+    <meta name="description" content="Estimate weekly, fortnightly, or monthly mortgage repayments with the Day One mortgage calculator.">
+    <link rel="canonical" href="https://www.dayonemortgages.co.nz/calculator.html">
+    <meta property="og:title" content="Mortgage Calculator | Day One Mortgages &amp; Insurance">
+    <meta property="og:description" content="Estimate mortgage repayments for guidance before speaking with an adviser.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.dayonemortgages.co.nz/calculator.html">
+    <meta property="og:image" content="https://www.dayonemortgages.co.nz/image/hero-advice.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="/favicon.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="stylesheet" href="/assets/css/site.css">
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div id="site-header"></div>
+
+    <main id="main" class="calculator-page">
+        <section class="page-hero">
+            <div class="container">
+                <p class="eyebrow">Calculator</p>
+                <h1>Estimate your mortgage repayments.</h1>
+                <p class="lead">This calculator provides a repayment estimate only. It does not include fees, changes in interest rates, lender conditions, or personalised advice.</p>
+            </div>
+        </section>
+
+        <section class="section calculator-section">
+            <div class="container">
+                <form class="calculator-widget" data-calculator-form novalidate>
+                    <div class="calculator-controls">
+                        <div class="calc-control calc-control-wide">
+                            <div class="calc-label-row">
+                                <label for="loanAmount">Loan amount</label>
+                                <button class="info-badge" type="button" aria-label="Loan amount information" data-tooltip="Enter the amount you expect to borrow, excluding deposit and any upfront costs.">i</button>
+                            </div>
+                            <div class="calc-input-group">
+                                <span>$</span>
+                                <input id="loanAmount" name="loanAmount" type="number" min="1000" max="10000000" step="any" value="500000" inputmode="decimal" required aria-describedby="loanAmountError" aria-invalid="false">
+                            </div>
+                            <input class="range-input" id="loanAmountRange" type="range" min="1000" max="10000000" step="1000" value="500000" data-range-for="loanAmount" aria-label="Loan amount slider">
+                            <div class="range-scale"><span>$1k</span><span>$10M</span></div>
+                            <p class="field-error" id="loanAmountError" data-field-error="loanAmount" hidden></p>
+                        </div>
+
+                        <div class="calc-control">
+                            <div class="calc-label-row">
+                                <label for="loanTerm">Loan term</label>
+                                <button class="info-badge" type="button" aria-label="Loan term information" data-tooltip="Choose how many years the loan is paid over. A shorter term usually means higher repayments but less total interest.">i</button>
+                            </div>
+                            <div class="calc-input-group">
+                                <input id="loanTerm" name="loanTerm" type="number" min="1" max="40" step="1" value="30" inputmode="numeric" required aria-describedby="loanTermError" aria-invalid="false">
+                                <span>Years</span>
+                            </div>
+                            <input class="range-input" id="loanTermRange" type="range" min="1" max="40" step="1" value="30" data-range-for="loanTerm" aria-label="Loan term slider">
+                            <div class="range-scale"><span>1</span><span>40</span></div>
+                            <p class="field-error" id="loanTermError" data-field-error="loanTerm" hidden></p>
+                        </div>
+
+                        <div class="calc-control">
+                            <div class="calc-label-row">
+                                <label for="interestRate">Interest rate</label>
+                                <button class="info-badge" type="button" aria-label="Interest rate information" data-tooltip="Use an annual interest rate. Even small rate changes can noticeably affect repayments and total interest.">i</button>
+                            </div>
+                            <div class="calc-input-group">
+                                <input id="interestRate" name="interestRate" type="number" min="0" max="20" step="0.01" value="6.5" inputmode="decimal" required aria-describedby="interestRateError" aria-invalid="false">
+                                <span>% p.a.</span>
+                            </div>
+                            <input class="range-input" id="interestRateRange" type="range" min="0" max="20" step="0.01" value="6.5" data-range-for="interestRate" aria-label="Interest rate slider">
+                            <div class="range-scale"><span>0%</span><span>20%</span></div>
+                            <p class="field-error" id="interestRateError" data-field-error="interestRate" hidden></p>
+                        </div>
+
+                        <div class="calc-control segmented-field">
+                            <p class="segmented-label" id="repaymentFrequencyLabel">Repayment frequency</p>
+                            <div class="segmented-control" role="radiogroup" aria-labelledby="repaymentFrequencyLabel">
+                                <input id="freqMonthly" name="repaymentFrequency" type="radio" value="monthly" checked>
+                                <label for="freqMonthly">Monthly</label>
+                                <input id="freqFortnightly" name="repaymentFrequency" type="radio" value="fortnightly">
+                                <label for="freqFortnightly">Fortnightly</label>
+                                <input id="freqWeekly" name="repaymentFrequency" type="radio" value="weekly">
+                                <label for="freqWeekly">Weekly</label>
+                            </div>
+                            <p class="field-error" id="repaymentFrequencyError" data-field-error="repaymentFrequency" hidden></p>
+
+                            <p class="repayment-type-label" id="repaymentTypeLabel">Repayment type</p>
+                            <div class="segmented-control two-option" role="radiogroup" aria-labelledby="repaymentTypeLabel">
+                                <input id="typePrincipalInterest" name="repaymentType" type="radio" value="principalInterest" checked>
+                                <label for="typePrincipalInterest">Principal &amp; Interest</label>
+                                <input id="typeInterestOnly" name="repaymentType" type="radio" value="interestOnly">
+                                <label for="typeInterestOnly">Interest Only</label>
+                            </div>
+                            <p class="field-error" id="repaymentTypeError" data-field-error="repaymentType" hidden></p>
+                        </div>
+                    </div>
+
+                    <p class="form-status" data-calculator-status aria-live="polite"></p>
+
+                    <div class="calculator-reduction">
+                        <p>Reduce your loan term and interest.</p>
+                        <a class="button secondary" href="/contact.html">Contact us</a>
+                    </div>
+
+                    <div class="calculator-output" data-calculator-result aria-live="polite">
+                        <div class="calc-output-grid">
+                            <div class="calc-main">
+                                <div class="calc-tabs" role="tablist" aria-label="Calculator result views">
+                                    <button class="calc-tab is-active" id="tab-summary" type="button" role="tab" aria-selected="true" aria-controls="panel-summary" data-calc-tab="summary">Loan summary</button>
+                                    <button class="calc-tab" id="tab-chart" type="button" role="tab" aria-selected="false" aria-controls="panel-chart" data-calc-tab="chart">Repayment chart</button>
+                                    <button class="calc-tab" id="tab-table" type="button" role="tab" aria-selected="false" aria-controls="panel-table" data-calc-tab="table">Loan amortisation table</button>
+                                </div>
+
+                                <section class="calc-panel is-active" id="panel-summary" role="tabpanel" aria-labelledby="tab-summary" data-calc-panel="summary">
+                                    <div class="calc-breakdown">
+                                        <span><b>Principal</b><output data-output-principal>$500,000</output></span>
+                                        <span><b>Interest</b><output data-total-interest>$637,722</output></span>
+                                        <span><b>Total paid</b><output data-total-paid>$1,137,722</output></span>
+                                    </div>
+                                </section>
+
+                                <section class="calc-panel" id="panel-chart" role="tabpanel" aria-labelledby="tab-chart" data-calc-panel="chart" hidden>
+                                    <div class="repayment-chart" data-repayment-chart></div>
+                                    <div class="chart-legend">
+                                        <span><i class="legend-principal"></i>Principal</span>
+                                        <span><i class="legend-interest"></i>Interest</span>
+                                    </div>
+                                </section>
+
+                                <section class="calc-panel" id="panel-table" role="tabpanel" aria-labelledby="tab-table" data-calc-panel="table" hidden>
+                                    <div class="table-wrap">
+                                        <table class="amortisation-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Period</th>
+                                                    <th>Payment</th>
+                                                    <th>Interest</th>
+                                                    <th>Balance</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody data-amortisation-table></tbody>
+                                        </table>
+                                    </div>
+                                </section>
+                            </div>
+
+                            <aside class="calc-side" aria-label="Loan summary">
+                                <div class="calc-result-card">
+                                    <p>Ongoing repayment</p>
+                                    <strong data-repayment-amount>$3,160</strong>
+                                    <span data-repayment-caption>per month for 30 years</span>
+                                    <div class="calc-rate"><output data-output-rate>6.50%</output><small>p.a.</small></div>
+                                    <hr>
+                                    <p>Total interest payable</p>
+                                    <strong class="sub-result" data-total-interest-large>$637,722</strong>
+                                    <span data-total-interest-caption>over 30 years</span>
+                                </div>
+                            </aside>
+                        </div>
+                    </div>
+                </form>
+
+                <div class="calculator-disclaimer">
+                    <h2>Calculator Disclaimer</h2>
+                    <p>The results from this calculator should be used as an indication only. Results do not represent quotes, pre-qualifications, or financial advice. Individual lenders apply different formulas, and information such as interest rates and default assumptions may change.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section cta-band">
+            <div class="container">
+                <div>
+                    <p class="eyebrow">Next step</p>
+                    <h2>Need a borrowing estimate?</h2>
+                    <p>The calculator is only a starting point. We can help you work through lender-specific options.</p>
+                </div>
+                <a class="button secondary" href="/contact.html">Ask Day One</a>
+            </div>
+        </section>
+    </main>
+
+    <div id="site-footer"></div>
+    <script src="/assets/js/site.js" defer></script>
+    <script src="/assets/js/calculator.js" defer></script>
+</body>
+</html>
