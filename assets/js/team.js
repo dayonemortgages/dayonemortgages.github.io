@@ -30,9 +30,8 @@
                     </div>
                     <div class="person-copy">
                         <div class="person-heading">
-                            <p class="person-kicker">${escapeHtml(content.role)}</p>
                             <h2>${escapeHtml(displayName)}</h2>
-                            <p class="person-subtitle">${languageCode === "ko" ? "예시 프로필" : "Example profile"}</p>
+                            <p class="person-kicker">${escapeHtml(content.role)}</p>
                         </div>
                         ${paragraphs}
                         <div class="person-links">

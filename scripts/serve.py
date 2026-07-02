@@ -4,9 +4,33 @@
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 import argparse
+from ipaddress import ip_address
 
 
 class Custom404Handler(SimpleHTTPRequestHandler):
+    def _should_disable_cache(self):
+        host = self.headers.get("Host", "").split(":", 1)[0].lower()
+        if host in {"localhost", "::1"}:
+            return True
+
+        try:
+            return ip_address(host).is_loopback
+        except ValueError:
+            pass
+
+        client_ip = self.client_address[0] if self.client_address else ""
+        try:
+            return ip_address(client_ip).is_loopback
+        except ValueError:
+            return False
+
+    def send_response(self, code, message=None):
+        super().send_response(code, message)
+        if self._should_disable_cache():
+            self.send_header("Cache-Control", "no-store, no-cache, must-revalidate, max-age=0")
+            self.send_header("Pragma", "no-cache")
+            self.send_header("Expires", "0")
+
     def send_error(self, code, message=None, explain=None):
         if code == 404:
             page = Path(self.directory) / "404.html"

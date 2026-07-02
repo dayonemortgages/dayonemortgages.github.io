@@ -1,6 +1,6 @@
 :root {
     --logo-blue: #46519d;
-    --header-offset: 136px;
+    --header-offset: 100px;
     --ink: #142235;
     --ink-soft: #26384f;
     --muted: #617084;
@@ -131,7 +131,7 @@ textarea {
 }
 
 .brand img {
-    width: 126px;
+    width: 140px;
     height: auto;
     object-fit: contain;
     transform: scaleX(1.16);
@@ -139,6 +139,8 @@ textarea {
 }
 
 .footer-logo img {
+    width: 140px;
+    height: auto;
     object-fit: contain;
 }
 
@@ -368,7 +370,7 @@ h1 {
 
 h2 {
     margin-bottom: 16px;
-    font-size: clamp(2rem, 4vw, 3.1rem);
+    font-size: clamp(2rem, 4vw, 2.5rem);
     line-height: 1.1;
     letter-spacing: 0;
 }
@@ -517,7 +519,7 @@ h3 {
 
 .person-layout {
     display: grid;
-    grid-template-columns: 220px minmax(0, 1fr);
+    grid-template-columns: 330px minmax(0, 1fr);
     gap: 26px;
     align-items: start;
 }
@@ -530,9 +532,9 @@ h3 {
     position: relative;
     overflow: hidden;
     aspect-ratio: 4 / 5;
-    border: 1px solid var(--line);
-    border-radius: 8px;
-    background: linear-gradient(180deg, rgba(233, 245, 243, 0.95), rgba(244, 248, 251, 0.95));
+    border: 1px solid rgba(70, 81, 157, 0.18);
+    border-radius: 12px;
+    background: linear-gradient(180deg, rgba(70, 81, 157, 0.08), rgba(0, 125, 133, 0.12));
     box-shadow: 0 10px 24px rgba(20, 34, 53, 0.08);
 }
 
@@ -578,17 +580,11 @@ h3 {
 
 .person-kicker {
     margin: 0 0 8px;
-    color: var(--teal-dark);
-    font-size: 0.8rem;
+    color: rgb(97, 97, 97);
+    font-size: 1rem;
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0;
-}
-
-.person-copy h2 {
-    margin: 0;
-    font-size: 1.55rem;
-    line-height: 1.15;
 }
 
 .person-subtitle {
@@ -600,7 +596,7 @@ h3 {
 
 .person-bio {
     margin-bottom: 14px;
-    color: var(--ink-soft);
+    color: rgb(97, 97, 97);
 }
 
 .person-links {
@@ -614,9 +610,9 @@ h3 {
     display: grid;
     gap: 3px;
     padding: 12px 14px;
-    border: 1px solid var(--line);
-    border-radius: 8px;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(244, 248, 251, 0.96));
+    border: 1px solid rgba(70, 81, 157, 0.16);
+    border-radius: 10px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(233, 245, 243, 0.95));
     text-decoration: none;
 }
 
@@ -694,6 +690,27 @@ h3 {
 
 .person-card {
     min-height: 100%;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(70, 81, 157, 0.16);
+    border-radius: 14px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(244, 248, 251, 0.98) 100%);
+    box-shadow: 0 18px 42px rgba(20, 34, 53, 0.08);
+}
+
+.person-card::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--logo-blue), var(--teal));
+}
+
+.person-copy h2 {
+    margin: 0;
+    color: var(--logo-blue);
+    font-size: 1.55rem;
+    line-height: 1.15;
 }
 
 .service-card {
@@ -790,13 +807,13 @@ h3 {
 }
 
 .page-hero h1 {
-    max-width: 28ch;
+    max-width: 1200px;
     font-size: clamp(2.3rem, 5vw, 3.8rem);
     line-height: 1.06;
 }
 
 .page-hero .lead {
-    max-width: 78ch;
+    max-width: 1200px;
     margin-bottom: 0;
 }
 
@@ -923,7 +940,7 @@ h3 {
 }
 
 .cta-band p {
-    max-width: 680px;
+    max-width: 800px;
     color: rgba(255, 255, 255, 0.78);
 }
 
@@ -1741,7 +1758,7 @@ textarea {
 }
 
 .footer-logo img {
-    width: 112px;
+    width: 140px;
     height: auto;
     padding: 7px;
     border-radius: 6px;
@@ -1964,7 +1981,7 @@ textarea {
 
 @media (max-width: 720px) {
     :root {
-        --header-offset: 100px;
+        --header-offset: 80px;
     }
 
     .container,
