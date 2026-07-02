@@ -35,6 +35,13 @@
             }
         });
 
+        document.querySelectorAll("[data-team-lang-link]").forEach((link) => {
+            const linkPath = normalizePath(new URL(link.getAttribute("href"), window.location.origin).pathname);
+            if (linkPath === currentPath) {
+                link.setAttribute("aria-current", "page");
+            }
+        });
+
         if (!button || !menu) return;
 
         button.addEventListener("click", () => {
