@@ -81,7 +81,7 @@ window.DayOneTeamProfiles = [
             },
             ko: {
                 name: "박상미",
-                role: "Partner",
+                role: "Admin Manager",
                 paragraphs: [
                     "저는 뉴질랜드 은행 및 금융업계에서 15년 이상의 경력을 보유하고 있으며, 그중 8년 이상을 뉴질랜드 주요 시중은행에서, 7년을 Mortgage Administration Manager로 근무하며 주택담보대출 및 모기지 운영 전반에 대한 폭넓은 전문성을 쌓아왔습니다. 대출 진행부터 금리 재고정(Refix), 대출 재구성(Restructure), 대출 서류 관리, 규정 준수(Compliance), 모기지 관리까지 다양한 업무를 담당해 왔습니다. 항상 정확하고 효율적인 업무 처리를 바탕으로 고객과 금융 전문가 모두가 안심하고 대출을 진행할 수 있도록 신뢰받는 서비스를 제공하고 있습니다."
                 ]
