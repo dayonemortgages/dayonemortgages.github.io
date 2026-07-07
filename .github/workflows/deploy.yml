@@ -1,0 +1,63 @@
+name: Deploy Static Site
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  qa-validation:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Boot local server for testing
+        run: |
+          # Start the python server in the background on port 4173
+          python3 scripts/serve.py 4173 &
+          
+          # Wait a few seconds for the server to initialize
+          sleep 3
+
+      - name: Validate Core Pages and 404 Handling
+        run: |
+          # Ensure index returns 200 OK
+          curl -s -o /dev/null -w "%{http_code}" http://localhost:4173/ | grep 200
+          
+          # Ensure a shared script returns 200 OK
+          curl -s -o /dev/null -w "%{http_code}" http://localhost:4173/assets/js/site.js | grep 200
+
+          # Ensure invalid paths trigger the 404 status correctly
+          curl -s -o /dev/null -w "%{http_code}" http://localhost:4173/invalid-path | grep 404
+
+  deploy:
+    needs: qa-validation
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Static Files
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: '.' 
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
