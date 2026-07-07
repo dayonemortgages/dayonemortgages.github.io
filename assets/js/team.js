@@ -39,10 +39,12 @@
                                 <span>Email</span>
                                 <strong>${escapeHtml(profile.email)}</strong>
                             </a>
+                            ${profile.phone ? `
                             <a class="person-link-chip" href="tel:${escapeAttribute(profile.phoneHref)}">
                                 <span>Phone</span>
                                 <strong>${escapeHtml(profile.phone)}</strong>
                             </a>
+                            ` : ""}
                         </div>
                     </div>
                 </div>
