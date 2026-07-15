@@ -46,29 +46,6 @@ window.DayOneTeamProfiles = [
         }
     },
     {
-        id: "daniel-jung",
-        image: "/image/Daniel.png",
-        email: "Daniel@dayonemortgages.co.nz",
-        phone: "021 761 138",
-        phoneHref: "+6421761138",
-        content: {
-            en: {
-                name: "Daniel Jung",
-                role: "Partner",
-                paragraphs: [
-                    "Daniel has over 10 years of experience across New Zealand's banking, mortgage, and insurance industries, having worked with major financial institutions in customer advisory and lending roles. His strong analytical skills and client-focused approach enable him to identify practical financial solutions tailored to each client's unique circumstances. Specialising in residential lending, refinancing, and insurance, Daniel is dedicated to helping clients make informed financial decisions with confidence. He believes in building lasting relationships through honest communication, reliable advice, and exceptional service. Whether clients are purchasing their first home, growing an investment portfolio, or reviewing their financial position, Daniel is committed to providing personalised guidance and ongoing support throughout every stage of their journey."
-                ]
-            },
-            ko: {
-                name: "Daniel Jung",
-                role: "Partner",
-                paragraphs: [
-                    "저는 뉴질랜드 은행, 모기지 및 보험 업계에서 10년 이상의 경력을 쌓으며 다양한 금융기관에서 고객 상담과 대출 업무를 담당해왔습니다. 금융 분석 능력과 실무 경험을 바탕으로 고객의 상황을 정확하게 이해하고 가장 적합한 금융 솔루션을 제안하는 것을 강점으로 하고 있습니다. 주택 융자, 재융자 및 보험을 전문으로 하며, 고객이 중요한 금융 결정을 보다 자신 있게 내릴 수 있도록 명확하고 실질적인 조언을 제공하고 있습니다. 첫 주택 구매부터 투자용 부동산, 재정 계획까지 고객의 금융 여정을 함께하며 신뢰를 바탕으로 한 장기적인 파트너가 되는 것을 목표로 최선을 다하고 있습니다."
-                ]
-            }
-        }
-    },
-    {
         id: "jessica-park",
         image: "/image/Jessica.jpg",
         email: "Jessica@dayonemortgages.co.nz",
