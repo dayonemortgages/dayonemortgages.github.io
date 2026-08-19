@@ -130,12 +130,22 @@ textarea {
     text-decoration: none;
 }
 
+.brand {
+    gap: 12px;
+}
+
 .brand img {
     width: 140px;
     height: auto;
     object-fit: contain;
     transform: scaleX(1.16);
     transform-origin: left center;
+}
+
+.brand .brand-award {
+    width: 90px;
+    height: 90px;
+    transform: none;
 }
 
 .footer-logo img {
@@ -1997,6 +2007,11 @@ textarea {
     .brand img {
         width: 92px;
         transform: scaleX(1.12);
+    }
+
+    .brand .brand-award {
+        width: 70px;
+        height: 70px;
     }
 
     .hero {
